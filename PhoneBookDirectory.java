@@ -148,6 +148,9 @@ public class PhoneBookDirectory {
 					}
 				}
 			}
+			else {
+				System.out.println("No such entry with these first and last name found");
+			}
 		}
 		return 0;
 	}
