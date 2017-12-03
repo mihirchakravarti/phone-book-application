@@ -20,8 +20,8 @@ public class PhoneBookApplication {
 		
 		
 		try{
-			sc = new Scanner(new File("NormalUserInfo.txt")).useDelimiter(",");
-			
+			sc = new Scanner(new File("NormalUserInfo.txt")).useDelimiter(","); //the files I used were named NormalUserInfo.txt
+			                                  				//and AdminInfo.txt, but they can be changed to whatever the user of this program wants
 			while (sc.hasNextLine()){
 			   id = sc.nextInt();
 			   username = sc.next();
