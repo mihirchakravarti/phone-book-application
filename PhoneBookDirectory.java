@@ -11,7 +11,7 @@ public class PhoneBookDirectory {
 	public int addEntry(PhoneBookEntry entry) {
 	
 			if(count == 6) {
-				System.out.println("entry not added");
+				System.out.println("entry not added. size of list is full");
 				return 0;
 			}
 			else {
@@ -51,6 +51,7 @@ public class PhoneBookDirectory {
 			
 			if(PBE[mid].getId() == id) {
 				PBE[mid].printBookEntry();
+				System.out.println("entry found");
 				return PBE[mid];
 			}
 			
@@ -63,6 +64,7 @@ public class PhoneBookDirectory {
 		}
 		
 		PhoneBookEntry newPBE = new PhoneBookEntry();
+		System.out.println("no such entry found");
 		return newPBE;
 	}
 	
@@ -165,9 +167,19 @@ public class PhoneBookDirectory {
 				PBE[i].setphonenumber("0"); //default last name is "0"
 				PBE[i].setemail("0"); //default last name is "0"
 				PBE[i].setzipcode("0"); //default zipcode is "0"
+				
+				for(int j = i; j < count; j++) {
+					PhoneBookEntry sw1 = new PhoneBookEntry();
+					sw1 = PBE[j + 1];
+					PBE[j + 1] = PBE[j];
+					PBE[j] = sw1;
+				}
+				
+				count--;
 				return 1;
 			}
 		} 
+		System.out.println("no such entry with that id found");
 		return 0;
 	}
 	
