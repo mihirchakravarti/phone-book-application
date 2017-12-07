@@ -20,8 +20,8 @@ public class PhoneBookApplication {
 		
 		
 		try{
-			sc = new Scanner(new File("NormalUserInfo.txt")).useDelimiter(","); //the files I used were named NormalUserInfo.txt
-			                                  				//and AdminInfo.txt, but they can be changed to whatever the user of this program wants
+			sc = new Scanner(new File("NormalUserInfo.txt")).useDelimiter(",");
+			
 			while (sc.hasNextLine()){
 			   id = sc.nextInt();
 			   username = sc.next();
@@ -108,8 +108,8 @@ public class PhoneBookApplication {
 							pba.changeusername();
 						}
 						else if(n == 10) {
+							System.out.println("thanks for using");
 							og = false;
-							break;
 						}
 						else {
 							System.out.println("you have entered an invalid input, enter again");
@@ -168,8 +168,8 @@ public class PhoneBookApplication {
 							nu.PrintUserInfo();
 						}
 						else if(y == 6) {
+							System.out.println("thanks for using");
 							op = false;
-							break;
 						}
 						else {
 							System.out.println("invalid input, enter again");
